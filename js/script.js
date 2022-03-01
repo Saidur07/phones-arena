@@ -43,7 +43,8 @@ const loadData = () => {
 const displayData = (myData) => {
   const cards = document.getElementById("cards");
   cards.textContent = "";
-
+  const detailsDiv = document.getElementById("phone-details");
+  detailsDiv.textContent = "";
   myData.forEach((phone) => {
     toggleErrorMsg("none");
     const div = document.createElement("div");
