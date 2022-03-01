@@ -135,6 +135,21 @@ const displayDetails = (detail) => {
         <tr>
           <th scope="row">Sensors</th>
           <td>${
+            detail.mainFeatures.sensors
+              ? `
+    <ul>
+        <li> ${detail.mainFeatures.sensors[0] ? detail.mainFeatures.sensors[0] : ""}</li>
+        <li> ${detail.mainFeatures.sensors[1] ? detail.mainFeatures.sensors[1] : ""}</li>
+        <li> ${detail.mainFeatures.sensors[2] ? detail.mainFeatures.sensors[2] : ""}</li>
+        <li> ${detail.mainFeatures.sensors[3] ? detail.mainFeatures.sensors[3] : ""}</li>
+        <li> ${detail.mainFeatures.sensors[4] ? detail.mainFeatures.sensors[4] : ""}</li>
+        <li> ${detail.mainFeatures.sensors[5] ? detail.mainFeatures.sensors[5] : ""}</li>
+    </ul>`
+      : "No sensors found"}</td>
+        </tr>
+        <tr>
+          <th scope="row">Others</th>
+          <td>${
             detail.others
               ? `
     <ul>
@@ -145,7 +160,7 @@ const displayDetails = (detail) => {
         <li><span>USB:</span> ${detail.others.USB}</li>
         <li><span>WLAN:</span> ${detail.others.WLAN}</li>
     </ul>`
-      : "No sensors found"}</td>
+      : "Not Found"}</td>
         </tr>
       </tbody>
     </table>
