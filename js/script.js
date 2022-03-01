@@ -21,7 +21,7 @@ const loadData = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      if (data.data.length === 0 || data === undefined) {
+      if (data.data.length === 0) {
         toggleErrorMsg("block");
         toggleSpinner("none");
         toggleShowBtn("none");
@@ -91,7 +91,6 @@ const loadDetails = (phoneId) => {
 // Displaying the data on the top
 
 const displayDetails = (detail) => {
-  console.log(detail);
   const detailsDiv = document.getElementById("phone-details");
   detailsDiv.textContent = "";
   const div = document.createElement("div");
@@ -105,8 +104,8 @@ const displayDetails = (detail) => {
     <table class="table table-hover">
       <thead>
         <tr>
+        <th scope="col">Properties</th>
           <th scope="col">Value</th>
-          <th scope="col">Properties</th>
         </tr>
       </thead>
       <tbody>
@@ -138,8 +137,7 @@ const displayDetails = (detail) => {
             detail.mainFeatures.sensors
               ? `
     <ul>
-        <li> ${detail.mainFeatures.sensors[0] ? detail.mainFeatures.sensors[0] : ""}</li>
-        <li> ${detail.mainFeatures.sensors[1] ? detail.mainFeatures.sensors[1] : ""}</li>
+        <li> ${detail.mainFeatures.sensors[0] ? detail.mainFeatures.sensors[0] : ""} ${detail.mainFeatures.sensors[1] ? detail.mainFeatures.sensors[1] : ""}</li>
         <li> ${detail.mainFeatures.sensors[2] ? detail.mainFeatures.sensors[2] : ""}</li>
         <li> ${detail.mainFeatures.sensors[3] ? detail.mainFeatures.sensors[3] : ""}</li>
         <li> ${detail.mainFeatures.sensors[4] ? detail.mainFeatures.sensors[4] : ""}</li>
