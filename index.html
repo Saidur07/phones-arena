@@ -19,14 +19,14 @@
 
     <!-- header starts here  -->
 
-    <header class="my-3">
+    <header class="my-0">
         <h1 class="title"><span><img src="images/phone.png" alt=""></span> <span class=" main-title">Phones Arena</span>
             - <span class="other-title">Find your phone</span></h1>
     </header>
 
     <!-- main section starts here -->
 
-    <main class="py-3">
+    <main class="py-3" id="main">
         <div class="search-area container">
             <div class="input-group mb-3">
                 <input type="text" class="form-control p-3" id="search-box" placeholder="Search Your Phone"
@@ -55,8 +55,11 @@
                 <p id="error-text" class="fs-3 text-center">No Phones Found</p>
             </div>
         </div>
+        <div class="phone-details mb-4" id="phone-details">
+        </div>
+
         <div class="cards container">
-            <div class="row row-cols-1 row-cols-md-2 g-4" id="cards">
+            <div class="row row-cols-1 row-cols-lg-2 g-4" id="cards">
             </div>
             <div id="show-all">
                 <button class="show-btn mx-auto my-5" id="show-btn">Show all</button>
